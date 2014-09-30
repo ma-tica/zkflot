@@ -1,0 +1,44 @@
+<language-addon>
+    <addon-name>zkflot</addon-name>
+  	<version>
+		<version-class>org.matica.zkflot.Version</version-class>
+		<version-uid>0.0.1</version-uid>
+		<zk-version>6.5.0</zk-version><!-- or later -->
+	</version>
+    
+	<language-name>xul/html</language-name>
+	<component>
+		<component-name>machart</component-name> <!-- required -->
+		<component-class>org.matica.zkflot.MaChart</component-class> <!-- required -->
+		<widget-class>zkflot.MaChart</widget-class> <!-- required -->
+		<mold>
+			<mold-name>default</mold-name>
+			<mold-uri>mold/machart.js</mold-uri>
+
+			<!--
+			== Tip in advance ==
+				You don't have to specify a css.dsp if you need not ,
+				but usually you need it.
+
+				You could assign a .css file ,too.
+
+				The css.dsp is almost as same as CSS file ,
+				but have more powerful enhancement.	(like EL support.)
+			====
+			-->
+			<css-uri>css/machart.css.dsp</css-uri>
+		</mold>
+	</component>
+	
+    <component>
+        <component-name>mapiechart</component-name>
+        <component-class>org.matica.zkflot.MaPieChart</component-class>
+        <widget-class>zkflot.MaPieChart</widget-class>
+        <mold>
+            <mold-name>default</mold-name>
+            <mold-uri>mold/mapiechart.js</mold-uri>
+            <css-uri>css/mapiechart.css.dsp</css-uri>
+        </mold>
+    </component>
+	
+</language-addon>

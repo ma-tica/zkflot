@@ -1,0 +1,25 @@
+<zk>
+	<window title="ZKFlot test Window" border="normal" 
+		apply="test.ctrl.DemoWindowComposer"
+		>
+		<tabbox >
+		<tabs>
+		<tab label="uno" selected="true"></tab>
+		<tab label="due" ></tab>
+		</tabs>
+		<tabpanels>
+			<tabpanel>
+<!-- 			<mapiechart id="pchart"></mapiechart> -->
+			<space />
+			<machart id="barChart"></machart>
+<!-- 			<machart id="lineChart"></machart> -->
+			</tabpanel>
+			<tabpanel >
+			<machart id="lineChart"></machart>
+			<mapiechart id="pchart"></mapiechart>
+			</tabpanel>
+		</tabpanels>
+		</tabbox>
+		
+	</window>
+</zk>
