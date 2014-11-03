@@ -99,7 +99,7 @@ zkflot.MaChart = zk.$extends(zk.Widget, {
     },
     setBars : function(bars)
     {
-    	this._bars = bars;
+    	this._bars = bars;    	
     },
     
     getStack : function()
@@ -161,7 +161,34 @@ zkflot.MaChart = zk.$extends(zk.Widget, {
 		}
     	var stackprop = this._stack;
     	
-    	
+    	//reset multiseries bar position on x axis
+    	if (this._bars != null && (barsprop.show == true & dt.length > 1 & this._stack != true))
+    	{
+    		if (barsprop.barWidth == undefined)
+    		{
+    			barsprop.barWidth = 0.5;
+    		}
+    		var bw = barsprop.barWidth;
+    		var c = 0;
+    		
+    		//first half: move to left 
+    		for(i=Math.floor(dt.length / 2);i>=0;i--)
+    		{
+				dt[i].data.forEach(function(point){					
+					point[0] -= c * bw;
+				})
+    			c++;
+    		}
+    		
+    		//second half: move to rigth
+    		for(i=Math.floor(dt.length / 2)+1;i<dt.length;i++)
+    		{
+				dt[i].data.forEach(function(point){					
+					point[0] += (i - Math.floor(dt.length / 2)) * bw;
+				})
+    			
+    		}
+    	}
 
     	var plot = $.plot("#" + this.uuid ,     			
   			  dt,
