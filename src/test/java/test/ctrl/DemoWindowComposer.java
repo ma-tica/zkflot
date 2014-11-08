@@ -148,12 +148,15 @@ public class DemoWindowComposer extends GenericForwardComposer {
 				  									   new MaPoint(5, 31.2),
 				  									   new MaPoint(6, 33.2))));
 
-		dataset.add(new ChartData("USA 9", Arrays.asList(new MaPoint(1, 25.2),
+		ChartData d1 = new ChartData("USA 9", Arrays.asList(new MaPoint(1, 25.2),
 				   new MaPoint(2, 18.4),
 				   new MaPoint(3, 21.2),
 				   new MaPoint(4, 36.2),
 				   new MaPoint(5, 31.2),
-				   new MaPoint(6, 33.2))));
+				   new MaPoint(6, 33.2)));
+		d1.setColor("#ff00ff");
+		
+		dataset.add(d1);
 //		dataset.add(new ChartData("USA 119", Arrays.asList(new MaPoint(1, 25.2),
 //				   new MaPoint(2, 18.4),
 //				   new MaPoint(3, 21.2),
@@ -163,7 +166,7 @@ public class DemoWindowComposer extends GenericForwardComposer {
 
 		
 		ChartAxis xaxis = new ChartAxis();
-		//xaxis.setAxisLabel("Ciaoooo");
+		//xaxis.setAxisLabel("X axis label");
 		xaxis.setPosition(ChartAxis.axe_position.BOTTOM);
 		xaxis.addTick("P 0", 0.0);
 		xaxis.addTick("P 1", 1.0);
@@ -174,10 +177,10 @@ public class DemoWindowComposer extends GenericForwardComposer {
 		xaxis.addTick("P_6", 6.0);
 		
 		barChart.setDataset(dataset);
-		barChart.setLines("{show: false}");
+		barChart.setLines("{show: true}");
 		//barWidth: 0.10	,
-		//barChart.setBars("{show:false}");
-		barChart.setBars("{show: true, zero: true, barWidth: 0.15, align: 'center'}");
+		barChart.setBars("{show:false}");
+		//barChart.setBars("{show: true, zero: true, barWidth: 0.15, align: 'center'}");
 		barChart.setStacked(false);
 		barChart.setWidth("760px");
 		barChart.setHeight("460px");

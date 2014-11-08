@@ -30,6 +30,7 @@ public class ChartData
 	private String _label;
 	private List<MaPoint> _data;
 	private int _barOrder;
+	private String color;
 	
 	
 
@@ -60,6 +61,10 @@ public class ChartData
 	public void setData(List<MaPoint> data) {
 		this._data = data;
 	}
+	public void addPoint(MaPoint point)
+	{
+		this._data.add(point);
+	}
 	
 	public int get_barOrder() {
 		return _barOrder;
@@ -68,11 +73,24 @@ public class ChartData
 	public void set_barOrder(int barOrder) {
 		this._barOrder = _barOrder;
 	}
+
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
 	
 	public JSONObject toJson()
 	{
 		JSONObject o = new JSONObject();
 		o.put("label", this._label);
+		if (this.color != null)
+		{
+			o.put("color", this.color);
+		}
 		JSONArray jdArr = new JSONArray();
 		for (MaPoint p : this._data )
 		{
@@ -93,6 +111,7 @@ public class ChartData
 		return o;
 		
 	}
+
 	
 	
 }

@@ -57,23 +57,20 @@ zkflot.MaChart = zk.$extends(zk.Widget, {
         if (this._dataset != data) {
             this._dataset = data;
             if (this.desktop)
-            	{
-                //this.$n().innerHTML = zUtl.encodeXML(model);
+           	{                
             	this.plot_();
             	this.poslegend_();
-            	}
+           	}
         }
     },
-    
-    
-    
+        
     getXaxis : function()
     {
     	return this._xaxis; 
     },    
     setXaxis : function(xaxis)
     {    	
-    	this._xaxis = xaxis;
+    	this._xaxis = xaxis;        
     },
     
     getYaxis : function()
@@ -126,8 +123,7 @@ zkflot.MaChart = zk.$extends(zk.Widget, {
     	if (this._title != title){
     		this._title = title;
     	}
-    },
-    
+    },    
     plot_ : function() {
     	var dt = jq.evalJSON(this._dataset);
     	
