@@ -154,7 +154,7 @@ public class DemoWindowComposer extends GenericForwardComposer {
 				   new MaPoint(4, 36.2),
 				   new MaPoint(5, 31.2),
 				   new MaPoint(6, 33.2)));
-		d1.setColor("#ff00ff");
+		d1.setColor("#000000");
 		dataset.add(new ChartData("ASIA", Arrays.asList(new MaPoint(1, 25.2),
 				   new MaPoint(2, 18.4),
 				   new MaPoint(3, 21.2),
